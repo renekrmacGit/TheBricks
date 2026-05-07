@@ -1,8 +1,11 @@
 /* General body styling */
 body {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0d17;
+    background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+    background-size: 550px 550px, 350px 350px;
+    color: #00d4ff;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,21 +16,21 @@ body {
 /* Container to hold the game and UI */
 .game-container {
     text-align: center;
-    background: #34495e;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background: rgba(20, 30, 48, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00d4ff;
+    border: 1px solid #00d4ff;
 }
 
 /* Canvas styling */
 canvas {
-    background-color: #ecf0f1;
-    border: 2px solid #bdc3c7;
-    border-radius: 5px;
-    margin-top: 15px;
+    background: black;
+    border: 3px solid #00d4ff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px #00d4ff;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 15px auto 0;
 }
 
 /* Stats layout */
@@ -41,10 +44,11 @@ canvas {
 
 /* Highlighted text for numbers */
 mark {
-    background-color: #e74c3c;
-    color: white;
+    background-color: #00d4ff;
+    color: black;
     padding: 2px 8px;
     border-radius: 4px;
+    text-shadow: none;
 }
 
 /* Legend Styling */
@@ -52,40 +56,52 @@ mark {
     margin-bottom: 15px;
     font-size: 0.9em;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
+/* Badges for block health */
 .brick-badge {
     padding: 5px 10px;
     border-radius: 4px;
     color: white;
-    margin: 0 5px;
     border: 1px solid rgba(255,255,255,0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.badge-blue { background-color: #0000FF; }
-.badge-red { background-color: #FF1C0A; }
-.badge-black { background-color: #222222; }
+/* Badge colors matching the neon blocks */
+.badge-hp1 { background-color: #e74c3c; border-color: #ff6b6b; } 
+.badge-hp2 { background-color: #3498db; border-color: #2980b9; } 
+.badge-hp3 { background-color: #2ecc71; border-color: #2ecc71; color: black; } 
 
-/* Styling for level buttons */
+/* Button styling */
 button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
+    background-color: transparent;
+    color: #00d4ff;
+    border: 2px solid #00d4ff;
     padding: 10px 15px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    transition: background 0.3s;
+    text-transform: uppercase;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
+/* Button hover effect */
 button:hover:not(:disabled) {
-    background-color: #2ecc71;
+    background-color: #00d4ff;
+    color: black;
+    box-shadow: 0 0 15px #00d4ff;
 }
 
+/* Disabled button state */
 button:disabled {
-    background-color: #7f8c8d;
+    border-color: #444;
+    color: #444;
     cursor: not-allowed;
     opacity: 0.7;
 }
